@@ -1,23 +1,18 @@
 package main
 
 import (
-	"net"
 	"encoding/binary"
-	"strings"
-	"strconv"
 	"fmt"
+	"net"
+	"strconv"
+	"strings"
 )
-
 
 // Convert net.IP to int32 转换之后是网络字节序列(第一个返回值),本机字节序(第二个返回值)
 func inet_aton(ipnr net.IP) (uint32, uint32) {
 	var sum uint32
-    l := len(ipnr)
-	if l !=  4 {
-		if l != 0 {
-			fmt.Println("ip error, ip len:",l)
-		}
-
+	l := len(ipnr)
+	if l != 4 {
 		return 0, 0
 	}
 	sum += uint32(uint8(ipnr[0])) << 24
@@ -42,7 +37,6 @@ func inet_aton(ipnr net.IP) (uint32, uint32) {
 
 	return netSequence, sum
 }
-
 
 // Convert net.IP to int32 转换之后是网络字节序列(第一个返回值),本机字节序(第二个返回值)
 func inet_atonsss(ipnr net.IP) (uint32, uint32) {
@@ -79,7 +73,7 @@ func inet_atonsss(ipnr net.IP) (uint32, uint32) {
 	return netSequence, sum
 }
 
-func main(){
+func main() {
 
 	//b0, _ := strconv.Atoi("0")
 	//	//fmt.Println("b0 : ",b0)
@@ -97,24 +91,11 @@ func main(){
 	//kk := uint32(0) << 16
 	//fmt.Println("kk: ",kk)
 
-	var ipnr = net.IP{1,0,255,0}
+	var ipnr = net.IP{1, 0, 255, 0}
 
 	tmm, _ := inet_aton(ipnr)
-	    fmt.Println("tmm: ",tmm)
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
+	fmt.Println("tmm: ", tmm)
+}
 
 //import (
 //	_ "github.com/go-sql-driver/mysql"
@@ -271,7 +252,6 @@ func main(){
 //	http.ListenAndServe(":9090", mux)
 //}
 
-
 //import (
 //	"fmt"
 //)
@@ -314,7 +294,6 @@ func main(){
 //
 //}
 
-
 //import "fmt"
 //
 ////原始接口实现
@@ -349,9 +328,6 @@ func main(){
 //}
 //
 
-
-
-
 //
 //import (
 //	"fmt"
@@ -384,7 +360,6 @@ func main(){
 //	}
 //}
 //
-
 
 //
 //
