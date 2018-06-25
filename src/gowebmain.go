@@ -39,7 +39,7 @@ func inet_aton(ipnr net.IP) (uint32, uint32) {
 }
 
 // Convert net.IP to int32 转换之后是网络字节序列(第一个返回值),本机字节序(第二个返回值)
-func inet_atonsss(ipnr net.IP) (uint32, uint32) {
+func inet_aton2(ipnr net.IP) (uint32, uint32) {
 
 	bits := strings.Split(ipnr.String(), ".")
 
